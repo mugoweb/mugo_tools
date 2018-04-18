@@ -1,0 +1,3 @@
+#!/bin/bash                                                                                                                                           
+mysqldump --add-drop-table -u root -p mugo > mugo.dump
+svn commit -m "sql dump updated" ../mugo.dump

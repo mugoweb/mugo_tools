@@ -1,0 +1,27 @@
+List of included features in that extension
+==============================================
+
+- jscalendar
+
+
+
+Extended Attribute Filters
+------------------------------
+
+1) fetch for object relations
+
+2) Filter to allow sorting by multiple attributes
+
+Name: SortbyMultipleClasses
+
+Example of usage:
+{def $latest_items=fetch( 'content', 'list', hash( 'parent_node_id', $block.custom_attributes.subtree_node_id,
+                                                   'limit', 1,
+                                                   'depth', 6,										
+                                                   'class_filter_type', 'include',
+                                                   'class_filter_array', array( 'csm_article', 'csm_blog_post' ),
+                                                   'extended_attribute_filter', hash( 'id', 'SortbyMultipleClasses',
+                                                                                      'params', hash( 'attributes', array( 'csm_article/publish_date',
+                                                                                                                           'csm_blog_post/publish_date' ) ) ),
+                                                   'sort_by', array( 'extended_sorting.sort_key_int', false() )
+                                                   ) )}
